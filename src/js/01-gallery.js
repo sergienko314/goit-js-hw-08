@@ -5,7 +5,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
 
-result = galleryItems
+gallery.innerHTML = galleryItems
   .map(
     ({ original, preview, description }) =>
       `<div class="gallery__item">
@@ -20,8 +20,6 @@ result = galleryItems
 </div>`
   )
   .join('');
-
-gallery.innerHTML = result;
 
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',

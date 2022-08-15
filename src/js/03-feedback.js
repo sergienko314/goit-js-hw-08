@@ -7,9 +7,6 @@ onForm.addEventListener('input', throttle(onInput, 500));
 let FEEDBACK_FORM = 'feedback-form-state';
 let formData = {};
 function onInput(event) {
-  // if (onMessage.value.trim() === '' || onEmail.value.trim() === '') {
-  //   return alert('Пустое поле!!!');
-  // }
   let formData = {
     email: onEmail.value,
     message: onMessage.value,
@@ -19,7 +16,7 @@ function onInput(event) {
 }
 
 function getFormValue() {
-  let saveFeedback = JSON.parse(localStorage.getItem(FEEDBACK_FORM));
+  const saveFeedback = JSON.parse(localStorage.getItem(FEEDBACK_FORM));
   if (saveFeedback) {
     onEmail.value = saveFeedback.email;
     onMessage.value = saveFeedback.message;
